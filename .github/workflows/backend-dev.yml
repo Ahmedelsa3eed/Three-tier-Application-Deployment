@@ -19,8 +19,8 @@ jobs:
 
       - name: Build the Docker image
         run: |
-          docker build --tag ${{ secrets.DOCKER_USERNAME }}/demo-backend-dev:$(git rev-parse --short HEAD) -f backend/Dockerfile .
+          docker build --tag ${{ secrets.DOCKERHUB_USERNAME }}/demo-backend-dev:$(git rev-parse --short HEAD) -f backend/Dockerfile .
 
       - name: Push the Docker image to Docker Hub
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/demo-backend-dev:$(git rev-parse --short HEAD)
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/demo-backend-dev:$(git rev-parse --short HEAD)
